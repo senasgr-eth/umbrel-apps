@@ -4,11 +4,11 @@ services:
   app_proxy:
     environment:
       APP_HOST: hopr-admin_1
-      APP_PORT: 3000
+      APP_PORT: 3005
 
   web:
     image: gcr.io/hoprassociation/hopr-admin
     restart: always
     stop_grace_period: 1m
     ports:
-      - 3000:3000
+      - 3005:3000
