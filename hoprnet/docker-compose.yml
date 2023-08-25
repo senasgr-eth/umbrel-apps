@@ -14,7 +14,7 @@ services:
   app_proxy:
     environment:
       APP_HOST: hoprnetadmin_1
-      APP_PORT: 6000
+      APP_PORT: 6002
 
   hoprd:
     image: gcr.io/hoprassociation/hoprd:bratislava

@@ -26,7 +26,7 @@ website: https://hoprnet.org/
 dependencies: []
 repo: https://github.com/hoprnet/hoprnet
 support: https://github.com/hoprnet/hoprnet/issues
-port: 6000
+port: 6002
 gallery:
   - 1.jpg
   - 2.jpg
