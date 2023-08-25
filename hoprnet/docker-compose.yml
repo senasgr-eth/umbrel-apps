@@ -36,7 +36,7 @@ services:
       - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - HOPRD_INIT=true
       - HOPRD_API=true
-      - HOPRD_API_HOST=0.0.0.0
+      - HOPRD_API_HOST=192.168.88.181
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-id
       - HOPRD_DISABLE_API_AUTHENTICATION=true
       # FIXME: must be used as long as release bratislava is set
@@ -44,7 +44,7 @@ services:
       # FIXME: must be used once release providence is set
       # - HOPRD_NETWORK=${HOPRD_NETWORK}
       - HOPRD_HEALTH_CHECK=true
-      - HOPRD_HEALTH_CHECK_HOST=0.0.0.0
+      - HOPRD_HEALTH_CHECK_HOST=192.168.88.181
     volumes:
       - hoprd_data:/app/hoprd-db
     deploy:
@@ -115,7 +115,7 @@ services:
     depends_on:
       - hoprd
     command: |
-      --web.listen-address=0.0.0.0:9090
+      --web.listen-address=192.168.88.181:9090
       --config.file=/etc/prometheus/prometheus.yml
       --storage.tsdb.path=/prometheus
       --web.console.libraries=/usr/share/prometheus/console_libraries
