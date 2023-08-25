@@ -12,7 +12,7 @@ volumes:
 
 services:
   hoprd:
-    image: ${HOPRD_DOCKER_IMAGE}
+    image: gcr.io/hoprassociation/hoprd:bratislava
     pull_policy: always
     mem_reservation: 300m
     container_name: hoprd
@@ -26,16 +26,16 @@ services:
       - '3001:3001'
     environment:
       - DEBUG=hopr*
-      - HOPRD_ANNOUNCE=${HOPRD_ANNOUNCE}
+      - HOPRD_ANNOUNCE=false
       - HOPRD_DATA=/app/hoprd-db
-      - HOPRD_PASSWORD=${HOPRD_PASSWORD}
+      - HOPRD_PASSWORD=open-sesame-iTwnsPNg0hpagP+o6T0KOwiH9RQ0
       - HOPRD_INIT=true
       - HOPRD_API=true
       - HOPRD_API_HOST=0.0.0.0
       - HOPRD_IDENTITY=/app/hoprd-db/.hopr-id
       - HOPRD_DISABLE_API_AUTHENTICATION=true
       # FIXME: must be used as long as release bratislava is set
-      - HOPRD_ENVIRONMENT=${HOPRD_ENVIRONMENT}
+      - HOPRD_ENVIRONMENT=monte_rosa
       # FIXME: must be used once release providence is set
       # - HOPRD_NETWORK=${HOPRD_NETWORK}
       - HOPRD_HEALTH_CHECK=true
@@ -48,7 +48,7 @@ services:
           memory: 2G
 
   admin:
-    image: ${HOPR_ADMIN_DOCKER_IMAGE}
+    image: gcr.io/hoprassociation/hopr-admin:bratislava
     ports:
       - '3000:3000'
     restart: unless-stopped
