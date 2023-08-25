@@ -21,9 +21,9 @@ services:
     networks:
       - hopr-net
     ports:
-      - '8080:8080'
-      - '9091:9091'
-      - '3001:3001'
+      - '6080:8080'
+      - '6091:9091'
+      - '6001:3001'
     environment:
       - DEBUG=hopr*
       - HOPRD_ANNOUNCE=false
@@ -50,7 +50,7 @@ services:
   admin:
     image: gcr.io/hoprassociation/hopr-admin:bratislava
     ports:
-      - '3000:3000'
+      - '6000:3000'
     restart: unless-stopped
     depends_on:
       - hoprd
@@ -137,7 +137,7 @@ services:
     env_file:
       - ./grafana/config.monitoring
     ports:
-      - '3030:3000'
+      - '6030:3000'
     depends_on:
       - prometheus
     networks:
