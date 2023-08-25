@@ -1,14 +1,9 @@
 version: "3.7"
 
 services:
-  app_proxy:
-    environment:
-      APP_HOST: hopr-admin_1
-      APP_PORT: 2031
-
-  web:
+  hopr_admin:
     image: gcr.io/hoprassociation/hopr-admin
-    restart: always
-    stop_grace_period: 1m
+    container_name: hopr_admin
     ports:
-      - 2031:3000
+      - "3000:3000"
+    restart: always
