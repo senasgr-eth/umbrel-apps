@@ -1,11 +1,6 @@
 ---
 version: '3.8'
 
-app_proxy:
-  environment:
-    APP_HOST: hoprnetadmin_1
-    APP_PORT: 6000
-
 networks:
   hopr-net:
     driver: bridge
@@ -16,6 +11,11 @@ volumes:
   hoprd_data: {}
 
 services:
+  app_proxy:
+    environment:
+      APP_HOST: hoprnetadmin_1
+      APP_PORT: 6000
+
   hoprd:
     image: gcr.io/hoprassociation/hoprd:bratislava
     pull_policy: always
